@@ -1,0 +1,759 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+
+
+/* Universal Styles */
+* {
+    font-family: 'Titillium Web', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+body {
+    background-color: #1F1D2B;
+}
+
+
+
+/* Universal styles for common widgets in each page */
+/* Universal Style for the Hero section (Make sure to add this class all pages exept single blog, admin area and add new article) */
+.hero-section {
+    height: 650px;
+}
+
+.width-class {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.defualt-h1{
+    font-size: 55px;
+    line-height: 65px;
+    margin-bottom: 25px;
+}
+
+.defualt-h2{
+    font-size: 40px;
+    line-height: 65px;
+    margin-bottom: 25px;
+}
+
+.hero-content span {
+    color: #51557E;
+}
+
+.defualt-p{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.defualt-small-p{
+    font-size: 16px;
+    font-weight: 200;
+}
+
+
+button {
+    border: none;
+    background-color: #51557E;
+    border-radius: 5px;
+}
+
+
+
+
+/* Navigation Bar Style */
+.navigation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+.navigation-container .site-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.navigation-container .main-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.navigation-container .main-menu a {
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.navigation-container .social-btn {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    line-height: 5px;
+}
+
+.navigation-container .social-btn a img{
+    width: 20px;
+    height: 20px;
+}
+
+.navigation-container .social-btn button {
+    padding: 8px 25px;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+/* Home Page Styles */
+.main-body-container .home {
+    background-image: url("images/home-hero.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.home-hero-content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+}
+
+.hero-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-heading p {
+    width: 600px;
+}
+
+.basic-form {
+    background-color: #252836;
+    padding: 25px 40px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.basic-form .form-header-text {
+    color: #A7A7A7;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.top-hr {
+    border: none;
+    border-bottom: 1px solid #A7A7A7;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+}
+
+.form-inputs input {
+    width: 290px;
+    margin-bottom: 35px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid #A7A7A7;
+}
+
+.form-inputs textarea {
+    width: 290px;
+    margin-bottom: 35px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid #A7A7A7;
+    resize: none;
+}
+
+.form-btn {
+    width: 310px;
+    padding: 8px 10px;
+    cursor: pointer;
+    margin-bottom: 35px;
+}
+
+
+.bottom-hr {
+    border: none;
+    border-bottom: 1px solid #A7A7A7;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.basic-form .form-footer-text {
+    color: #A7A7A7;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+
+
+/* Blog Post Snippet */
+.blog-post-snippet-container {
+    padding-top: 35px;
+    padding-bottom: 75px;
+}
+
+.blog-post-snippet-container .defualt-p {
+    margin-bottom: 50px;
+}
+
+.post-snippet-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 75px;
+    justify-items: center;
+    align-items: center;
+}
+
+.post-snippet {
+    padding: 18px 20px 20px 20px;
+    width: 300px;
+    background-color: #252836;
+    border-radius: 7px;
+}
+
+.post-snippet .post-snippet-img-holder {
+    text-align: center;
+    width: 300px;
+    height: 170px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+
+.post-snippet-category {
+    color: #A7A7A7;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.post-snippet-title{
+    text-decoration: none;
+}
+
+.post-snippet-title h3{
+    margin-bottom: 20px;
+}
+
+.post-snippet-info {
+    color: #A7A7A7;
+    margin-bottom: 20px;
+}
+
+.post-snippet-bottom-hr {
+    border: none;
+    border-bottom: 1px solid #A7A7A7;
+    margin-bottom: 20px;
+}
+
+.post-snippet-bottom {
+    color: #A7A7A7;
+    font-size: 13px;
+}
+
+
+
+/* Login Form */
+
+.login-form {
+    width: 30%;
+    margin: 100px auto;
+}
+
+.login-form-header .form-header-text {
+    margin-bottom: 0;
+}
+
+.login-form-header {
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.login-form-header span {
+    padding: 1px;
+    cursor: pointer;
+}
+
+
+
+
+/* Footer Styles */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-container .main-menu {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+    border-top: 1px solid #A7A7A7;
+    padding-top: 35px;
+}
+
+.footer-container .main-menu a {
+    text-decoration: none;
+}
+
+.footer-container .social-btn {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
+/* About us page style */
+.main-body-container .about {
+    background-image: url("images/about-hero.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about-hero-content {
+    display: block;
+    padding-top: 150px;
+    text-align: center;
+}
+
+.about-hero-content .hero-heading p {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.service-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 200px;
+    row-gap: 100px;
+    margin-bottom: 100px;
+}
+
+.service-card {
+    background-color: #252836;
+    padding: 25px;
+    border-radius: 5px;
+    display: flex;
+    gap: 50px;
+}
+
+.service-card img {
+    width: 64px;
+}
+
+
+
+/* Contact Us */
+.main-body-container .contact {
+    background-image: url("images/contact-hero.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contact-us-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.company-details-section div {
+    margin-bottom: 25px;
+}
+
+
+
+/* Course Page According */
+.accordion-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.accordion-container li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #252836;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.accordion-container li label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.accordion-container li label span {
+    transform: rotate(90deg);
+    font-size: 22px;
+}
+
+.accordion-container label + input[type="radio"] {
+    display: none;
+}
+
+.accordion-container .accordion-content {
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.accordion-container label + input[type="radio"]:checked + .accordion-content {
+    max-height: fit-content;
+}
+
+
+/* Single Blog Post */
+.featured-img {
+    background-image: url("images/sample-featured.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+.post-content-holder {
+    margin-bottom: 100px;
+}
+
+.post-content {
+    background-color: #252836;
+    margin-bottom: 100px;
+    width: 850px;
+    margin: 0 auto;
+    margin-top: -100px;
+    padding: 50px;
+}
+
+.post-content h1 {
+    margin-bottom: 20px;
+}
+
+.post-content .post-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 300;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.post-content .post-meta p {
+    color: #a7a7a7;
+}   
+
+.article-content p {
+    color: #A7A7A7;
+    margin-top: 40px;
+}
+
+.article-content h2 {
+    color: #A7A7A7;
+    margin-top: 40px;
+}
+
+.article-content h3 {
+    color: #A7A7A7;
+    margin-top: 40px;
+}
+
+.article-content h4 {
+    color: #A7A7A7;
+    margin-top: 40px;
+}
+
+.article-content h5 {
+    color: #A7A7A7;
+    margin-top: 40px;
+}
+
+
+/* Admin page */
+.logout-btn {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.admin-container {
+    margin-top: 50px;
+}
+
+.new-article {
+    padding: 10px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.topic {
+    margin-bottom: 25px;
+}
+
+.article-container {
+    margin-bottom: 100px;
+}
+
+.article {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 50px;
+    background-color: #252836;
+    border-radius: 8px;
+}
+
+.article button {
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+
+/* New article form */
+.new-article-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.new-article-form {
+    margin-top: 35px;
+}
+
+#add-new-article{
+    padding: 50px;
+}
+
+#new-article-input {
+    width: 100%;
+}
+
+#add-new-article-btn{
+    width: 100%;
+}
+
+.tinyMCE {
+    margin-bottom: 35px;
+}
+
+#postContent {
+    border-radius: 0;
+}
+
+
+
+
+
+/* Responsive Styles */
+@media only screen 
+    and (max-device-width: 800px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait)
+{
+
+    /* Universal Styles for the Mobile Devices */
+    .hero-section {
+        height: auto;
+    }
+
+    .hero-heading {
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .defualt-h1{
+        font-size: 50px;
+        line-height: 60px;
+        margin-bottom: 25px;
+    }
+    
+    .defualt-h2{
+        font-size: 40px;
+        line-height: 65px;
+        margin-bottom: 25px;
+    }
+    
+    .hero-content span {
+        color: #51557E;
+    }
+    
+    .defualt-p{
+        font-size: 12px;
+        font-weight: 300;
+    }
+
+
+
+
+    
+    /* Navigation Bar */
+    .navigation-container {
+        padding: 5px 25px;
+    }
+    
+    .navigation-container .social-btn {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navigation-container .main-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #252836;
+        transition: 0.3s;
+    }
+    
+    .navigation-container .main-menu .nav-link {
+        padding: 10px 0px;  
+    }
+
+    .main-menu.active{
+        left: 0;
+    }
+
+
+
+
+    /* Home Page Mobile */
+    .main-body-container {
+        padding: 0px 15px;
+    }
+
+    .home-hero-content {
+        display: block;
+    }
+
+    .hero-content p {
+        width: auto;
+    }
+    
+
+    .basic-form {
+        padding: 25px 0px;
+    }
+
+    .post-snippet-container {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+
+    /* About Page Mobile */
+    .service-card-container {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+
+    /* contact us form */
+    .contact-us-container {
+        display: block;
+    }
+
+    .contact-us-container  .company-details-section {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+
+    /* Course Page */
+    .accordion-container {
+        margin: 0;
+    }
+
+
+    /* Single post mobile */
+    .post-content-holder {
+        padding: 0;
+    }
+    
+    .post-content {
+        padding: 0;
+        width: 95%;
+    }
+
+    .post-meta {
+        padding: 5px;
+    }
+
+    .post-content h1 {
+        padding: 15px;
+        margin: 0;
+    }
+
+    .post-content h2 {
+        padding: 15px;
+        margin: 0;
+    }
+
+    .post-content h3 {
+        padding: 15px;
+        margin: 0;
+    }
+
+    .post-content h4 {
+        padding: 15px;
+        margin: 0;
+    }
+
+    .post-content h5 {
+        padding: 15px;
+        margin: 0;
+    }
+
+    .article-content p {
+        padding: 15px;
+        margin: 0;
+    }
+
+  }

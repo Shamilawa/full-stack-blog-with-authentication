@@ -1,0 +1,71 @@
+<!-- Header -->
+<%- include('partials/header.ejs') %>
+
+    <!-- Home Body Containet -->
+    <div class="main-body-container">
+
+        <!-- Hero Section -->
+        <div class="hero-section home">
+
+            <div class="hero-content home-hero-content width-class">
+
+                <div class="hero-heading">
+                    <h1 class="defualt-h1">Learn How to Trade With <br><span>Correct Technique</span></h1>
+                    <p class="defualt-p">Our very popular INTERACTIVE ONLINE CLASSROOM COURSE is offered by our senior lecturer with nearly 20 years of trading experience of which the last 12 years is full-time. It is offered like an in-class course with live presentation over Zoom and students can interact with the lecturer through audio and/or chat.</p>
+                </div>
+
+                <div class="form-container">
+                    <form class="basic-form" action="/" method="post">
+                        <p class="form-header-text"> <%= registerMsg %>  </p>
+                        <hr class="top-hr">
+
+                        <div class="form-inputs">
+                            <input type="text" name="fullname" placeholder="Full name" value="<%= fullName %>" required>
+                        </div>
+                        <div class="form-inputs">
+                            <input type="email" name="email" placeholder="Email" value="<%= email %>" required>
+                        </div>
+                        <div class="form-inputs">
+                            <input type="password" name="password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="form-btn">Create your account</button>
+
+                        <hr class="bottom-hr">
+                        
+                        <p class="form-footer-text">By signing up you agree to our Terms, Data Policy and <br> Cookies Policy</p>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Blog Post Snippet Section -->
+        <div class="blog-post-snippet-container width-class">
+            <h2 class="defualt-h2">Latest Blog Post</h2>
+            <p class="defualt-p">Those people who develop the ability to continuously acquire new and better forms of knowledge that they can apply to their work and to their lives will be the movers and shakers in our society for the indefinite future.</p>
+            
+          
+            <!-- Post Snippet -->
+            <div class="post-snippet-container">
+               
+                <% articles.forEach(article => { %>
+                    <div class="post-snippet">
+                        <div class="post-snippet-img-holder" style="background-image: url('<%= article.featuredImg %>');"></div>
+                        <p class="post-snippet-category"><%=article.postCategory%> </p>
+                        <a class="post-snippet-title" href="<%=article.link%>"><h3><%= article.articleTitle %> </h3></a>
+                        <% const fullPostDesc = article.description %> 
+                        <p class="post-snippet-info"><%= fullPostDesc.substring(1, 150);%> ...</p>
+                        <hr class="post-snippet-bottom-hr">
+                        <p class="post-snippet-bottom"><%= article.publishedDate %>  <span style="padding-left: 5px;"></span> | <span style="padding-left: 5px;"></span><%= article.author %> </p>
+                    </div>
+                <% }) %>
+                    
+            </div>
+
+        </div>
+
+
+    </div>
+
+<%- include('partials/footer.ejs') %>

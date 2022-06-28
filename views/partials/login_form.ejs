@@ -1,0 +1,23 @@
+<div class="modal-login-form-wrapper" id="form-modal-container">
+    <div class="form-container login-form">
+        <form class="basic-form" action="/login" method="post">
+            <div class="login-form-header">
+                <p class="form-header-text"><%= loginFormMsg %> </p>
+            </div>
+        
+            <hr class="top-hr">
+
+            <div class="form-inputs">
+                <input type="email" name="email" placeholder="Email">
+            </div>
+            <div class="form-inputs">
+                <input type="password" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="form-btn login-form-btn">Login</button>
+
+            <hr class="bottom-hr">
+            
+            <p class="form-footer-text">By signing in you agree to our Terms, Data Policy and <br> Cookies Policy</p>
+        </form>
+    </div>
+</div>
