@@ -53,7 +53,7 @@
                     <div class="post-snippet">
                         <div class="post-snippet-img-holder" style="background-image: url('<%= article.featuredImg %>');"></div>
                         <p class="post-snippet-category"><%=article.postCategory%> </p>
-                        <a class="post-snippet-title" href="<%=article.link%>"><h3><%= article.articleTitle %> </h3></a>
+                        <a class="post-snippet-title" href="/article/<%=article.link%>"><h3><%= article.articleTitle %> </h3></a>
                         <% const fullPostDesc = article.description %> 
                         <p class="post-snippet-info"><%= fullPostDesc.substring(1, 150);%> ...</p>
                         <hr class="post-snippet-bottom-hr">

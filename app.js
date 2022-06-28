@@ -24,16 +24,18 @@ mongoose.connect("mongodb://localhost:27017/fullStackBlogDB");
 
 
 // Getting Routes
-const rootRoute         = require("./Routes/root_route");
-const loginRoute        = require("./Routes/login_route");
-const authorRoute       = require("./Routes/author_route_auth");
-const newArticleRoute   = require("./Routes/new_article_route");
+const rootRoute = require("./Routes/root_route");
+const loginRoute = require("./Routes/login_route");
+const authorRoute = require("./Routes/author_route_auth");
+const singlePostRoute = require("./Routes/single_post_route");
+const newArticleRoute = require("./Routes/new_article_route");
 
 // Routes setup
 app.use("/", rootRoute);
 app.use("/login", loginRoute);
 app.use("/admin", authorRoute);
 app.use("/new-article", newArticleRoute);
+app.use("/article", singlePostRoute);
 
 
 // Routes ----
@@ -41,6 +43,7 @@ app.get("/about", function(req, res){res.render("about", {authDetails: req})});
 
 app.get("/contact", function(req, res){res.render("contact", {authDetails: req})});
 
+app.get("/article", function(req, res){res.render("new_article", {authDetails: req})});
 
 // User Logout Function
 app.get('/logout', function(req, res){
