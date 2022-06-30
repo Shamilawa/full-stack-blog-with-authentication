@@ -34,6 +34,7 @@ const authorRoute = require("./Routes/author_route_auth");
 const singlePostRoute = require("./Routes/single_post_route");
 const newArticleRoute = require("./Routes/new_article_route");
 const updateArticleRoute = require("./Routes/update_article_route");
+const contactRoute = require("./Routes/contact_route");
 
 // Routes setup
 app.use("/", rootRoute);
@@ -42,12 +43,11 @@ app.use("/admin", authorRoute);
 app.use("/new-article", newArticleRoute);
 app.use("/update", updateArticleRoute);
 app.use("/article", singlePostRoute);
+app.use("/contact", contactRoute);
 
 
 // Routes ----
 app.get("/about", function(req, res){res.render("about", {authDetails: req})});
-
-app.get("/contact", function(req, res){res.render("contact", {authDetails: req})});
 
 app.get("/article", function(req, res){res.render("new_article", {authDetails: req})});
 
