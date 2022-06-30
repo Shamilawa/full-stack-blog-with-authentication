@@ -18,13 +18,18 @@
             <a class="nav-link" href="/"><p>Home</p></a>
             <a class="nav-link" href="/about"><p>About Us</p></a>
             <a class="nav-link" href="/contact"><p>Contact Us</p></a>
-            <a class="nav-link" href="/admin"><p>Publish Your Article</p></a>
+            <!-- Author Dashboard Btn Show if the user is logged in -->
+            <% if(authDetails.user) {  %>
+                <a class="nav-link" href="/admin"><p>Dashboard</p></a>
+            <% } else {  %>
+                <a style="display: none;" class="nav-link" href="/admin"><p>Dashboard</p></a>
+            <% }  %>
         </div>
         <div class="social-btn">
             <a href="/"><img class="social-icon" src="/images/linkedin-logo.png" alt="linkedin icon"></a>
             <a href="/"><img class="social-icon" src="/images/ig-logo.png" alt="instagram icon"></a>
             <a href="/"><img class="social-icon" src="/images/fb-logo.png" alt="facebook icon"></a>
-            <!-- Logout and Login Button -->
+            <!-- Logout and Login Button switch based on the user login-->
             <% if(authDetails.user) {  %>
                 <a href="/logout" id="open-form"><button class="login-btn">Logout</button></a>
             <% } else {  %>

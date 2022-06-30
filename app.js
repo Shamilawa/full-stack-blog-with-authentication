@@ -4,6 +4,8 @@ const path      = require("path");
 const mongoose  = require("mongoose");
 const session   = require("express-session");
 const passport  = require("passport");
+const bodyParser = require("body-parser");
+var methodOverride = require('method-override');
 
 // creating express app
 const app = express();
@@ -11,9 +13,11 @@ const app = express();
 // Middleware
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 app.use(session({secret: "mysecret", resave: false, saveUninitialized: true}));
+app.use(methodOverride('_method'));
+
 
 // Passport Initialize
 app.use(passport.initialize());
@@ -29,12 +33,14 @@ const loginRoute = require("./Routes/login_route");
 const authorRoute = require("./Routes/author_route_auth");
 const singlePostRoute = require("./Routes/single_post_route");
 const newArticleRoute = require("./Routes/new_article_route");
+const updateArticleRoute = require("./Routes/update_article_route");
 
 // Routes setup
 app.use("/", rootRoute);
 app.use("/login", loginRoute);
 app.use("/admin", authorRoute);
 app.use("/new-article", newArticleRoute);
+app.use("/update", updateArticleRoute);
 app.use("/article", singlePostRoute);
 
 
@@ -45,16 +51,17 @@ app.get("/contact", function(req, res){res.render("contact", {authDetails: req})
 
 app.get("/article", function(req, res){res.render("new_article", {authDetails: req})});
 
+
 // User Logout Function
-app.get('/logout', function(req, res){
-    req.logout(function(err){
-        if(err) {
+app.get('/logout', function (req, res) {
+    req.logout(function (err) {
+        if (err) {
             console.log(err);
         } else {
             res.redirect('/');
         }
     });
-  });
+});
 
 
 

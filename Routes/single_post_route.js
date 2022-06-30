@@ -9,6 +9,7 @@ router.get("/:articleLink", function(req, res){
             console.log(err);
         } else if(foundArticle){
             res.render("single_post",{
+                featuredImg: foundArticle.featuredImg,
                 postTitle:foundArticle.articleTitle,
                 author: foundArticle.author,
                 date: foundArticle.publishedDate,

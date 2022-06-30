@@ -10,16 +10,23 @@
                 <p class="topic">Published Article</p>
 
                 <div class="article-list">
+                    
+                    <% articles.forEach(article => { %>
+                        <!-- one Article -->
+                            <div class="article">
+                                <p class="article-component flex-article-bullet">&#x2022</p>
+                                <p class="article-component flex-article-title"><%= article.articleTitle %> </p>
+                                <p class="article-component flex-article-category"><%= article.postCategory %></p>
+                                <p class="article-component"><%= article.author %></p>
+                                <p class="article-component"><%= article.publishedDate %></p>
+                                <a href="/update/<%=article.id%>"><button name="editBtn" value="<%=article.id%>" type="submit" class="article-component"><span class="	glyphicon glyphicon-pencil"></span>Edit</button></a>
+                                <form action="new-article/delete/<%=article.id%>?_method=DELETE" method="post">
+                                    <button name="editBtn" value="<%=article.id%>" type="submit" class="article-component"><span class="glyphicon glyphicon-trash"></span> Delete </button>
+                                </form>
+                            </div> 
+                    <% }) %>
 
-                    <!-- one Article -->
-                    <div class="article">
-                        <p>01</p>
-                        <p>What is forex trading and how to become...</p>
-                        <p>Category</p>
-                        <p>Author</p>
-                        <p>27 Dec</p>
-                        <button>Edit Article</button>
-                    </div>
+
 
                 </div>
 

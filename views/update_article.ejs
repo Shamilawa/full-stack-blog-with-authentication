@@ -3,12 +3,12 @@
     <!-- Home Body Containet -->
     <div class="main-body-container">
         <div class="new-article-container width-class">
-            <h3>Add New Article</h3>
+            <h3>Update New Article</h3>
             <p>Fill all the field below and make sure add follow SEO principals if targeting audience from google</p>
 
             
             <div class="form-container new-article-form">
-                <form class="basic-form" id="add-new-article" action="<%=formRoute%>" method="post" enctype="multipart/form-data">
+                <form class="basic-form" id="add-new-article" action="/update/<%=id%>?_method=PATCH" method="POST">
 
                     <div class="form-inputs">
                         <input value="<%=title%>" id="new-article-input" type="text" name="articleTitle" placeholder="Article Title" required>
@@ -24,9 +24,6 @@
                     </div>
                     <div class="form-inputs">
                         <input value="<%=description%>" id="new-article-input" type="text" name="description" placeholder="Post Description" required>
-                    </div>
-                    <div class="form-inputs">
-                        <input value="<%=featuredImg%>" id="new-article-input" type="file" name="featuredimg" placeholder="Upload Image">
                     </div>
 
                     <button type="submit" class="form-btn" id="add-new-article-btn">Publish Article</button>

@@ -3,6 +3,7 @@ const router = express.Router();
 const Article = require("../models/ArticleModule");
 const LocalStrategy = require("../strategies/local_user");
 const multer    = require("multer");
+const { route } = require("./author_route_auth");
 
 // Setting up multer
 const storage = multer.diskStorage({
@@ -19,7 +20,14 @@ const upload = multer({ storage: storage })
 
 router.get("/", LocalStrategy.isLoggedIn, function(req, res){
     res.render("new_article", {
-        authDetails : req
+        authDetails : req,
+        formRoute: "/new-article",
+        title: "",
+        category: "",
+        content:"",
+        link: "",
+        description: "",
+        featuredImg: ""
     });
 });
 
@@ -54,12 +62,27 @@ router.post("/", upload.single("featuredimg"), function(req, res){
         if(err) {
             console.log(err);
         } else {
-            res.render("admin", {authDetails : req});
+            res.redirect("/admin");
         }
     });
 
     
 });
+
+// Delete Article
+router.delete('/delete/:articleId', async (req, res) => {
+    try {
+        const id = req.params.articleId;
+        const data = await Article.findByIdAndDelete(id)
+        res.redirect("/admin");
+    }
+    catch (error) {
+        console.log(error);
+    }
+});
+
+
+
 
 
 

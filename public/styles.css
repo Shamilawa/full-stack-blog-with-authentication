@@ -101,8 +101,9 @@ button {
 }
 
 .navigation-container .social-btn button {
-    padding: 8px 25px;
+    padding: 8px 20px;
     cursor: pointer;
+    color: white;
 }
 
 .hamburger-menu {
@@ -442,10 +443,9 @@ button {
 
 /* Single Blog Post */
 .featured-img {
-    background-image: url("images/sample-featured.png");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 300px;
+    height: 500px;
 }
 
 .post-content-holder {
@@ -457,7 +457,7 @@ button {
     margin-bottom: 100px;
     width: 850px;
     margin: 0 auto;
-    margin-top: -100px;
+    margin-top: -300px;
     padding: 50px;
 }
 
@@ -518,6 +518,7 @@ button {
     padding: 10px;
     margin-bottom: 50px;
     cursor: pointer;
+    color: white;
 }
 
 .topic {
@@ -529,17 +530,39 @@ button {
 }
 
 .article {
+    font-size: 14px;
+    font-weight: 200;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 10px 50px;
     background-color: #252836;
     border-radius: 8px;
+    margin-bottom: 10px;
+    align-items: baseline;
+}
+
+
+.flex-article-title {
+    width: 50%;
+}
+
+.flex-article-category {
+    width: 15%;
 }
 
 .article button {
-    padding: 5px;
+    font-size: 12px;
+    padding: 5px 15px;
     cursor: pointer;
 }
+
+.article a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
 
 
 
