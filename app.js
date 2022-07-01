@@ -7,6 +7,7 @@ const passport  = require("passport");
 const bodyParser = require("body-parser");
 var methodOverride = require('method-override');
 
+
 // creating express app
 const app = express();
 
@@ -24,7 +25,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Database Connection
-mongoose.connect("mongodb://localhost:27017/fullStackBlogDB");
+mongoose.connect("mongodb+srv://admin-shamila:19980216Shamila@cluster0.8zfkb.mongodb.net/fullStackBlogDB");
 
 
 // Getting Routes
@@ -66,6 +67,6 @@ app.get('/logout', function (req, res) {
 
 
 // Port Configuration
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log("Server Started at Port 3000");
 });

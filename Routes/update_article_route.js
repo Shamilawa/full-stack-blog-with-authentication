@@ -53,7 +53,6 @@ router.patch("/:articleId", async function(req, res){
             options
         )
         
-        console.log(result);
         res.redirect("/admin");
     }
 

@@ -5,6 +5,7 @@ const User                  = require("../models/UserModel");
 const bcrypt                = require("bcrypt");
 const Article               = require("../models/ArticleModule");
 
+
 router.get("", function (req, res) {
 
     // Getting all the from DB
@@ -53,13 +54,19 @@ router.post("", function (req, res) {
                             console.log(err);
                         } else {
                             if (savedUser) {
-                                res.render("home", { 
-                                    registerMsg: "Register Success",
-                                    fullName: "",
-                                    email: "",
-                                    // headerLogRoute: "/logout",
-                                    // headerBtnTxt : "Logout"
-                                    authDetails: req
+                                // Getting all the from DB and send successfully registered
+                                Article.find({}, function(err, articles){
+                                    if(err) {
+                                        console.log(err);
+                                    } else {
+                                        res.render("home", {
+                                            registerMsg: "Successfully Registered",
+                                            fullName: "",
+                                            email: "",
+                                            authDetails: req,
+                                            articles: articles
+                                        });
+                                    }
                                 });
                             }
                         }
