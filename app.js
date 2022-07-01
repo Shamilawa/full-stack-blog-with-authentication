@@ -15,7 +15,6 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({extended: true}));
-app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 app.use(session({secret: "mysecret", resave: false, saveUninitialized: true}));
 app.use(methodOverride('_method'));
 
